@@ -7,10 +7,6 @@ def escribir_menu():
     print('\nFICHEROS\n1. Leer fichero de texto\n2. Copiar fichero\n3. Listar archivos de directorio\n0. Salir')
 
 
-def escribir_menu():
-    print('\nFICHEROS\n1. Leer fichero de texto\n2. Copiar fichero\n3. Listar archivos de directorio\n0. Salir')
-
-
 def pedir_opcion():
     print('Escoja una opción: ', end='')
 
@@ -25,7 +21,7 @@ def leer_opcion():
 
 
 def leer_fichero():
-    ruta = input("Escribe el directorio del txt: ")  # Pedimos la ruta por consola
+    ruta = input("Escribe el directorio del archivo de texto: ")  # Pedimos la ruta por consola
 
     if (os.path.exists(ruta)):
         text_file = open(ruta, "r")  # La abrimos
@@ -38,8 +34,8 @@ def leer_fichero():
 
 
 def copiar_fichero():
-    rutaOrigen = input("Escribe la ruta de tu archivo txt que quiera copiar ")
-    rutaCopiar = input("Escribe la ruta donde la quiera pegar ")
+    rutaOrigen = input("Escribe la ruta de tu archivo de texto que quiera copiar: ")
+    rutaCopiar = input("Escribe la ruta donde la quiera pegar: ")
     if (os.path.exists(rutaOrigen) and os.path.exists(rutaCopiar)):
         shutil.copy(rutaOrigen, rutaCopiar)
         print("Copiado con éxito")
